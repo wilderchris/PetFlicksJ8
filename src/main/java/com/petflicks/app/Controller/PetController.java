@@ -3,6 +3,7 @@ package com.petflicks.app.Controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.petflicks.app.Exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,7 +24,7 @@ import com.petflicks.app.Models.User;
 import com.petflicks.app.Service.PetService;
 
 @RestController
-@RequestMapping(path="/pet")
+@RequestMapping(path="/pet/v1")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PetController {
 
@@ -51,11 +52,11 @@ public class PetController {
 	}
 	
 	@GetMapping(path="/{petId}")//
-	public ResponseEntity<Pet> getPetById(@PathVariable int petId) throws PetNotFoundException{
+	public ResponseEntity<Pet> getPetById(@PathVariable int petId) throws PetNotFoundException, UserNotFoundException {
 		System.out.println("get by pet id");
 		Pet pet = petServ.getPetById(petId);
 		if (pet != null) {
-		return ResponseEntity.ok(pet);
+		return  ResponseEntity.ok(pet);
 	} else
 		return ResponseEntity.notFound().build();
 	}
@@ -88,7 +89,7 @@ public class PetController {
 	}
 	
 	@DeleteMapping(path="/{petId}")//
-	public ResponseEntity<Void> deleteUser(@RequestBody Pet deletePet) throws PetNotFoundException {
+	public ResponseEntity<Void> deletePet(@RequestBody Pet deletePet) throws PetNotFoundException {
 		if (deletePet != null) {
 			petServ.deletePet(deletePet);
 			return ResponseEntity.status(HttpStatus.CREATED).build();

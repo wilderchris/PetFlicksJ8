@@ -12,7 +12,7 @@ public class VideoServiceImpl implements VideoService {
 	//Dotenv dotenv = Dotenv.configure().directory("./).filename(".env").load();// default values comment to have reminder
 
 	
-	private S3ServiceImpl s3Service;
+	private final S3ServiceImpl s3Service;
 	private VideoRepository videoRepo;
 	
 	
@@ -34,6 +34,26 @@ public class VideoServiceImpl implements VideoService {
 		
 		videoRepo.save(video);
 		// write to DB
+
+	}
+
+	@Override
+	public Video findById(int videoId) {
+		return null;
+	}
+
+	@Override
+	public Video create(Video newVideo) {
+		return null;
+	}
+
+	@Override
+	public Video update(Video videoToEdit) {
+		return null;
+	}
+
+	@Override
+	public void delete(Video deleteVideo) {
 
 	}
 

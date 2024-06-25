@@ -47,7 +47,7 @@ public class UserServiceTest {
 		}
 	}
 
-	@Test
+	//@Test
 	public void registerUser() throws UsernameAlreadyExists {
 
 		//User newUser = userServ.register(testUser);

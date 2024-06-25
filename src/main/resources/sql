@@ -1,0 +1,24 @@
+CREATE TABLE Board ( board_id int,
+title varchar(80),description varchar(80),
+postId date);
+
+CREATE TABLE Comment ( commentId int, userId int,
+postId int, commentText varchar(80));
+CREATE TABLE Follower ( follower_Id int, userId int,
+petId int);
+CREATE TABLE Pet ( pet_id int, pet_pic_url varchar(80),
+name varchar(80), age int, description varchar(200),
+breed varchar(80),user_id int);
+
+CREATE TABLE Post ( postId int, title varchar(80),
+description varchar(80), videoId int,
+ tdPosted varchar(100);
+
+ CREATE TABLE usr ( user_Id int, username varchar(80),
+ passwrd varchar(80), first_name varchar(80),
+  last_name varchar(100), email varchar(80),
+  user_role varchar(16),isActive boolean, is_not_locked boolean,
+  user_pic_url varchar(80), pet_id int, description varchar(200) ;
+
+  CREATE TABLE Video ( videoId int, video_url varchar(80),
+  userId int, description varchar(100);

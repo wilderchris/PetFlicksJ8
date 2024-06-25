@@ -33,10 +33,10 @@ public class Follower {
 		this.userId = userId;
 		this.petId = petId;
 	}
-	public int getFollowId() {
+	public int getFollowerId() {
 		return followerId;
 	}
-	public void setFollowId(int followId) {
+	public void setFollowerId(int followId) {
 		this.followerId = followId;
 	}
 	public int getUserId() {
@@ -70,7 +70,7 @@ public class Follower {
 	public String toString() {
 		return "Follower [followerId=" + followerId + ", userId=" + userId + ", petId=" + petId + "]";
 	}
-	
-	
-	
+
+
+
 }

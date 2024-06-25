@@ -14,7 +14,7 @@ import com.petflicks.app.Models.User;
 public interface PetService {
 
 	public Pet add(Pet newPet) throws PetAlreadyExists;
-	public Pet getPetById(int petId) throws PetNotFoundException;
+	public Pet getPetById(int petId) throws UserNotFoundException, PetNotFoundException;
 	public Pet getPetsByUsername(String username) throws UserNotFoundException;
 	public Pet update(Pet pet) throws PetNotFoundException;
 	public Pet deletePet(Pet pet) throws PetNotFoundException;

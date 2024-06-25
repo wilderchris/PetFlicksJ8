@@ -1,5 +1,6 @@
 package com.petflicks.app.Service;
 
+import com.petflicks.app.Models.Board;
 import org.springframework.stereotype.Service;
 
 import com.petflicks.app.Exception.InvalidLoginException;
@@ -10,14 +11,10 @@ import com.petflicks.app.Models.User;
 @Service
 public interface BoardService {
 
-	public User login(String username, String password) throws UserNotFoundException, InvalidLoginException;
-	public User register(User newUser) throws UsernameAlreadyExists;
-	public User getUserById(int userId) throws UserNotFoundException;
-	public User getUserByEmail(String email) throws UserNotFoundException;
-	public User getUserByUsername(String username) throws UserNotFoundException;
-	public User update(User user) throws UserNotFoundException;
-	public User deleteUser(User user) throws UserNotFoundException;
-	
-	
-	
+	public Board create(Board newBoard);
+	public int delete(Board board);
+	public Board update(Board board);
+	public Board findById(int boardId);
+	public Board findByTitle(String title);
+
 }
