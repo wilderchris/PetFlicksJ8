@@ -21,11 +21,10 @@ public class Video {
 	@Column(name="video_url")
 	private String videoURL;
 	@Column
-	private int userId;
+	private int userId = 1;
 	@Column
 	private String description;
-	@Column
-	private boolean like;
+	
 	
 	
 	
@@ -34,13 +33,12 @@ public class Video {
 	}
 
 
-	public Video(int videoId, String videoURL, int userId, String description, boolean like) {
+	public Video(int videoId, String videoURL, int userId, String description) {
 		super();
 		this.videoId = videoId;
 		this.videoURL = videoURL;
 		this.userId = userId;
 		this.description = description;
-		this.like = like;
 	}
 	
 	
@@ -84,19 +82,11 @@ public class Video {
 	}
 
 
-	public boolean isLike() {
-		return like;
-	}
-
-
-	public void setLike(boolean like) {
-		this.like = like;
-	}
-
+	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(description, like, userId, videoId, videoURL);
+		return Objects.hash(description, userId, videoId, videoURL);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -107,13 +97,13 @@ public class Video {
 		if (getClass() != obj.getClass())
 			return false;
 		Video other = (Video) obj;
-		return Objects.equals(description, other.description) && like == other.like && userId == other.userId
+		return Objects.equals(description, other.description) && userId == other.userId
 				&& videoId == other.videoId && Objects.equals(videoURL, other.videoURL);
 	}
 	@Override
 	public String toString() {
 		return "Video [videoId=" + videoId + ", videoURL=" + videoURL + ", userId=" + userId + ", description="
-				+ description + ", like=" + like + "]";
+				+ description + "]";
 	}
 	
 	

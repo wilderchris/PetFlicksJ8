@@ -40,10 +40,12 @@ public class UserController {
 		this.userService = userService;
 	}
 	
+	/*
+
+
+	 */
 	
-	
-	
-	@PostMapping//
+	@PostMapping(path="/v1/register")
 	public ResponseEntity<Map<String,Integer>> register(@RequestBody User newUser){
 		//This methods responsibility is to sign up a new user
 		//no checking if user already exists
@@ -104,7 +106,7 @@ public class UserController {
 //		}
 //	}
 
-	@GetMapping(path="/{userId}")//
+	@GetMapping(path="/v1/{userId}")//
 	public ResponseEntity<User> getUserById(@PathVariable int userId) throws UserNotFoundException{
 		System.out.println("get by user id");
 		User user = userService.getUserById(userId);
