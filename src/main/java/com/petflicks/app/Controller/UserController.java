@@ -40,8 +40,10 @@ public class UserController {
 		this.userService = userService;
 	}
 	
-	
-	
+	/*
+
+
+	 */
 	
 	@PostMapping(path="/v1/register")
 	public ResponseEntity<Map<String,Integer>> register(@RequestBody User newUser){
